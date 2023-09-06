@@ -1,0 +1,54 @@
+.shop-header {
+    background-image: url('./bugatti_forza.jpg');
+    background-size: cover;
+    height: 700px;
+    color: black; 
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 100px;
+}
+
+.shop-stats {
+    color: black;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+}
+
+
+h2 {
+    text-shadow: rgb(39, 80, 155) 1px 0 10px;
+    margin-bottom: 30rem;
+    margin-left: 37rem;
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 4rem; 
+    white-space: nowrap;
+}
+
+h3 {
+    text-shadow: rgb(39, 80, 155) 1px 0 10px;
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 2rem; 
+    white-space: nowrap;
+    margin-left: 25rem;
+}
+
+.shop-btn {
+	margin: auto;
+  	position: absolute;
+  	top: 90;
+  	left: 50;
+  	bottom: 0;
+  	height: 40px;
+	width: 200px;
+}
+
+.signup-container {
+    background-image: url('./Ferrari.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover;
+}
+

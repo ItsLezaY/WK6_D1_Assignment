@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container d-flex justify-content-center align-items center">
+    <div class="signup-container row mt-5 p-5 shadow rounded border border-primary w-75">
+        <div class="col d-flex">
+            <img src="" class="" alt="">
+        </div>
+        <div class="col">
+            <form class="row g-3" method="POST">
+                {{ form.hidden_tag() }}
+                <h3>Register Now!</h3>
+                <div class="col-md-6 opacity-50 text-light">
+                    {{ form.first_name.label }}
+                    {{form.first_name(class='form-control mt-2 bg-dark border-0', placeholder = 'John')}}
+                </div>
+                <div class="col-md-6 opacity-50 text-light">
+                    {{ form.last_name.label }}
+                    {{form.last_name(class='form-control mt-2 bg-dark border-0', placeholder = 'Doe')}}
+                </div>
+                <div class="col-12 opacity-50 text-light">
+                    {{ form.username.label }}
+                    {{ form.username(class='form-control mt-2 bg-dark border-0', placeholder = 'jdoe' )}}
+                    {% for error in form.username.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-12 opacity-50 text-light">
+                    {{ form.email.label }}
+                    {{ form.email(class='form-control mt-2 bg-dark border-0', placeholder = 'jdoe@gmail.com' )}}
+                    {% for error in form.email.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-6 opacity-50 text-light">
+                    {{ form.password.label }}
+                    {{ form.password(class='form-control mt-2 bg-dark border-0', placeholder = 'Password' )}}
+                    {% for error in form.password.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-6 opacity-50 text-light">
+                    {{ form.verify_password.label }}
+                    {{ form.verify_password(class='form-control mt-2 bg-dark border-0', placeholder = 'Password' )}}
+                    {% for error in form.verify_password.errors %}
+                        <span class="err-msg">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                <div class="col-12 opacity-50">
+                    {{ form.submit(class='btn btn-primary') }}
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
