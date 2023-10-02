@@ -40,6 +40,36 @@ def signup():
 
 
         flash(f"You have successfully registered user {username}", category='success')
-        return redirect('/')
+        return redirect('/signin')
     
     return render_template('sign_up.html', form=registerform)
+
+@auth.route('/signin', methods = ['GET', 'POST'])
+def signin():
+
+    loginform = LoginForm()
+
+    if request.method == 'Post' and loginform.validate_on_submit():
+        email = loginform.email.data 
+        password = loginform.password.data 
+        print(email, password)
+
+
+        user = User.query.filter(User.email == email).first()
+        print(user)
+
+        if user and check_password_hash(user.password, password):
+            login_user(user)
+
+            flash(f"Successfully logged in user {email}", category='success')
+            return redirect('/')
+        else:
+            flash(f"Invalid Email and/or Password, Please try again", category='warning')
+            return redirect('/signin')
+        
+    return render_template('sign_in.html', form=loginform)
+
+@auth.route('/logout')
+def logout():
+    logout_user()
+    return redirect('/')

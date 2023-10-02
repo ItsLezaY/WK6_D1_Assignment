@@ -21,3 +21,14 @@ class RegisterForm(FlaskForm):
     password = PasswordField('Password', validators = [ DataRequired()])
     verify_password = PasswordField('Confirm Password', validators=[ DataRequired(), EqualTo('password')])
     submit = SubmitField('Register')
+
+
+
+#creat our Product Form
+class ProductForm(FlaskForm):
+    name = StringField("Product Name", validators=[ DataRequired()])
+    image = StringField("Img Url **Optional")
+    description = StringField("Description **Optional")
+    price = DecimalField("Price", validators=[DataRequired()])
+    quantity = IntegerField("Quantity", validators=[DataRequired()])
+    submit = SubmitField()
