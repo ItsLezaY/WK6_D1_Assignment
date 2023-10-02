@@ -1,3 +1,4 @@
 carinventory_env
 migrations
 __pycache__
+.env
