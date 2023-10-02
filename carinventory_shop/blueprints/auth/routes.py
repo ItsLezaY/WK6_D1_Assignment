@@ -49,7 +49,7 @@ def signin():
 
     loginform = LoginForm()
 
-    if request.method == 'Post' and loginform.validate_on_submit():
+    if request.method == 'POST' and loginform.validate_on_submit():
         email = loginform.email.data 
         password = loginform.password.data 
         print(email, password)
